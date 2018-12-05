@@ -187,8 +187,8 @@ phyloseq_obj <- phyloseq(otu_table(sequence_table_nochim,
                          sample_data(metadata_in), # metadata for each sample
                          tax_table(taxa))
 
-melted_phyloseq <- psmelt(phyloseq_obj)
-
 save(phyloseq_obj, file = "output/phyloseq_obj.Rdata")
 
-save(melted_phyloseq, file = "output/phyloseq_obj.Rdata")
+melted_phyloseq <- psmelt(phyloseq_obj)
+
+save(melted_phyloseq, file = "output/melted_phyloseq.Rdata")

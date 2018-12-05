@@ -47,6 +47,7 @@ library("mctoolsr")
 library("phyloseq")
 
 load("output/phyloseq_obj.Rdata")
+load("output/melted_phyloseq.Rdata")
 # load data produced from analysis scripts using
 # something like load("output/processed_data.Rdata")
 ```
