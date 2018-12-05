@@ -67,7 +67,8 @@ melted_phyloseq %>%
 ggplot(aes(x = Phylum, y = Abundance, fill = additive)) +
   geom_col(position = position_dodge()) +
   theme(axis.text = element_text(angle = 90, hjust = 1)) +
-ggtitle("Abundance of Bacterial Phyla in Chicken Diet With or Without Additives")
+ggtitle("Abundance of Bacterial Phyla in
+       Chicken Diet With or Without Additives")
 ```
 
 ```{r}
@@ -93,7 +94,8 @@ melted_phyloseq %>%
 ggplot(aes(x = Family, y = Abundance, fill = additive)) +
   geom_col(position = position_dodge()) +
   theme(axis.text = element_text(angle = 90, hjust = 1)) +
-ggtitle("Abundance of Bacterial Family in Chicken Diet With or Without Additives")
+ggtitle("Abundance of Bacterial Family in
+       Chicken Diet With or Without Additives")
 ```
 
 ```{r}
@@ -119,7 +121,8 @@ melted_phyloseq %>%
 ggplot(aes(x = Genus, y = Abundance, fill = additive)) +
   geom_col(position = position_dodge()) +
   theme(axis.text = element_text(angle = 90, hjust = 1)) +
-ggtitle("Abundance of Bacterial Genus in Chicken Diet With or Without Additives")
+ggtitle("Abundance of Bacterial Genus in
+       Chicken Diet With or Without Additives")
 ```
 
 ```{r}
