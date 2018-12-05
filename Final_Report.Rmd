@@ -1,6 +1,6 @@
 ---
-title: "Final Report: Your Title Here"
-author: "Don Francisco"
+title: "Final Report: Effects Of Kibble And Raw Meat Diets With Or Without Additives On Fecal Microbial Communities Of Healthy Adult Beagles"
+author: "Emre Ovet"
 date: "December 5, 2018"
 output:
     github_document: default
@@ -34,24 +34,103 @@ These are the methods you used to do your bioinformatic analyses analyses. Shoul
 
 ## Subsections are ok in the results section too
 
-```{r your-code-here}
-# Add code chunks as needed for your analyses
-# For most analyses, I would recommend splitting the
-# intensive computational part into a seperate R script file
-# and then just load your libraries and the data object here
-# using the `load()` function. Ask me for clarification if this is
-# unclear.
-```
-
 ```{r load-packages-and-data}
 # load packages as needed
 library("dplyr")
+library("tidyr")
+library("knitr")
+library("ggplot2")
+library("citr")
+library("dada2")
+library("seqinr")
+library("mctoolsr")
+library("phyloseq")
 
+load("output/phyloseq_obj.Rdata")
 # load data produced from analysis scripts using
 # something like load("output/processed_data.Rdata")
 ```
 
-In addition to a minimum of 5-8 figures/tables (and associated captions), you should include sufficient text in this section to describe what your findings were. Remember that in the results section you just describe what you found, but you don't interpret it - that happens in the discussion. 2-3 pages.
+
+
+```{r}
+melted_phyloseq %>%
+  ggplot(aes(x = Phylum, y = Abundance, fill = food)) +
+  geom_col(position = position_dodge()) +
+  theme(axis.text = element_text(angle = 90, hjust = 1)) +
+ggtitle("Abundance of Bacterial Phyla by Diet")
+```
+
+```{r}
+melted_phyloseq %>%
+  filter(food %in% c("chicken")) %>%
+ggplot(aes(x = Phylum, y = Abundance, fill = additive)) +
+  geom_col(position = position_dodge()) +
+  theme(axis.text = element_text(angle = 90, hjust = 1)) +
+ggtitle("Abundance of Bacterial Phyla in Chicken Diet With or Without Additives")
+```
+
+```{r}
+melted_phyloseq %>%
+  filter(food %in% c("beef")) %>%
+ggplot(aes(x = Phylum, y = Abundance, fill = additive)) +
+  geom_col(position = position_dodge()) +
+  theme(axis.text = element_text(angle = 90, hjust = 1)) +
+ggtitle("Abundance of Bacterial Phyla in Beef Diet With or Without Additives")
+```
+
+```{r}
+melted_phyloseq %>%
+  ggplot(aes(x = Family, y = Abundance, fill = food)) +
+  geom_col(position = position_dodge()) +
+  theme(axis.text = element_text(angle = 90, hjust = 1)) +
+ggtitle("Abundance of Bacterial Family by Diet")
+```
+
+```{r}
+melted_phyloseq %>%
+  filter(food %in% c("chicken")) %>%
+ggplot(aes(x = Family, y = Abundance, fill = additive)) +
+  geom_col(position = position_dodge()) +
+  theme(axis.text = element_text(angle = 90, hjust = 1)) +
+ggtitle("Abundance of Bacterial Family in Chicken Diet With or Without Additives")
+```
+
+```{r}
+melted_phyloseq %>%
+  filter(food %in% c("beef")) %>%
+ggplot(aes(x = Family, y = Abundance, fill = additive)) +
+  geom_col(position = position_dodge()) +
+  theme(axis.text = element_text(angle = 90, hjust = 1)) +
+ggtitle("Abundance of Bacterial Family in Beef Diet With or Without Additives")
+```
+
+```{r}
+melted_phyloseq %>%
+  ggplot(aes(x = Genus, y = Abundance, fill = food)) +
+  geom_col(position = position_dodge()) +
+  theme(axis.text = element_text(angle = 90, hjust = 1)) +
+ggtitle("Abundance of Bacterial Genus by Diet")
+```
+
+```{r}
+melted_phyloseq %>%
+  filter(food %in% c("chicken")) %>%
+ggplot(aes(x = Genus, y = Abundance, fill = additive)) +
+  geom_col(position = position_dodge()) +
+  theme(axis.text = element_text(angle = 90, hjust = 1)) +
+ggtitle("Abundance of Bacterial Genus in Chicken Diet With or Without Additives")
+```
+
+```{r}
+melted_phyloseq %>%
+  filter(food %in% c("beef")) %>%
+ggplot(aes(x = Genus, y = Abundance, fill = additive)) +
+  geom_col(position = position_dodge()) +
+  theme(axis.text = element_text(angle = 90, hjust = 1)) +
+ggtitle("Abundance of Bacterial Genus in Beef Diet With or Without Additives")
+```
+
 
 # Discussion
 
