@@ -52,35 +52,6 @@ load("output/melted_phyloseq.Rdata")
 # something like load("output/processed_data.Rdata")
 ```
 
-
-
-```{r}
-melted_phyloseq %>%
-  ggplot(aes(x = Phylum, y = Abundance, fill = food)) +
-  geom_col(position = position_dodge()) +
-  theme(axis.text = element_text(angle = 90, hjust = 1)) +
-ggtitle("Abundance of Bacterial Phyla by Diet")
-```
-
-```{r}
-melted_phyloseq %>%
-  filter(food %in% c("chicken")) %>%
-ggplot(aes(x = Phylum, y = Abundance, fill = additive)) +
-  geom_col(position = position_dodge()) +
-  theme(axis.text = element_text(angle = 90, hjust = 1)) +
-ggtitle("Abundance of Bacterial Phyla in
-       Chicken Diet With or Without Additives")
-```
-
-```{r}
-melted_phyloseq %>%
-  filter(food %in% c("beef")) %>%
-ggplot(aes(x = Phylum, y = Abundance, fill = additive)) +
-  geom_col(position = position_dodge()) +
-  theme(axis.text = element_text(angle = 90, hjust = 1)) +
-ggtitle("Abundance of Bacterial Phyla in Beef Diet With or Without Additives")
-```
-
 ```{r}
 melted_phyloseq %>%
   ggplot(aes(x = Family, y = Abundance, fill = food)) +
