@@ -60,41 +60,60 @@ load("output/melted_phyloseq.Rdata")
 
 ```{r}
 melted_phyloseq %>%
-  ggplot(aes(x = Family, y = Abundance, fill = food)) +
+  ggplot(aes(x = Phylum, y = Abundance, fill = food)) +
   geom_col(position = position_dodge()) +
   theme(axis.text = element_text(angle = 90, hjust = 1)) +
-ggtitle("Abundance of Bacterial Family by Diet")
+ggtitle("Abundance of Bacterial Phylum by Diet")
 ```
+
+**Figure 1**
+
+In figure 1, we can see that Fusobacteria phylum is the most abundant phylum in beef and chicken diet fecal samples. Firmicutes is the most abundant phylum among the kibble diet fecal samples. Actinobacteria phylum is significantly high in beef diet fecal samples than the rest of the fecal samples.
+
 
 ```{r}
 melted_phyloseq %>%
   filter(food %in% c("chicken")) %>%
-ggplot(aes(x = Family, y = Abundance, fill = additive)) +
+ggplot(aes(x = Phylum, y = Abundance, fill = additive)) +
   geom_col(position = position_dodge()) +
   theme(axis.text = element_text(angle = 90, hjust = 1)) +
-ggtitle("Abundance of Bacterial Family in
+ggtitle("Abundance of Bacterial Phylum in
        Chicken Diet With or Without Additives")
 ```
+
+**Figure 2**
+
+In figure 2, we can see that chicken control diet fecal samples have the highest Fusobacteria abundance. Bacteriodetes abundance is almost equal in all additive samples. Firmicutes abundance is the highest in inulin added chicken diet fecal samples.
 
 ```{r}
 melted_phyloseq %>%
   filter(food %in% c("beef")) %>%
-ggplot(aes(x = Family, y = Abundance, fill = additive)) +
+ggplot(aes(x = Genus, y = Abundance, fill = additive)) +
   geom_col(position = position_dodge()) +
   theme(axis.text = element_text(angle = 90, hjust = 1)) +
-ggtitle("Abundance of Bacterial Family in Beef Diet With or Without Additives")
+ggtitle("Abundance of Bacterial Phylum in Beef Diet With or Without Additives")
 ```
+
+**Figure 3**
+
+In figure 3, we can see that Fusobacteria abundance is significantly higher in inulin added diet fecal samples than the rest of the additive samples. No Cyanobacteria or Chloroplast is present in any of the groups. Actinobacteria abundance is higher in yeast cell wall added beef diet fecal samples than the rest of the additive diet groups.
 
 ```{r}
 melted_phyloseq %>%
+  filter(Abundance > 250) %>%
   ggplot(aes(x = Genus, y = Abundance, fill = food)) +
   geom_col(position = position_dodge()) +
   theme(axis.text = element_text(angle = 90, hjust = 1)) +
 ggtitle("Abundance of Bacterial Genus by Diet")
 ```
 
+**Figure 4**
+
+In figure 4, we can see that there is a high amount of unidentified genus among all groups. Abundance of *Fusobacterium* genus is significantly high in beef and chicken diet fecal samples. *Anaerobiospirillum*, *Clostridium_XVII*, *Streptococcus* and *Sutterella* only appear in chicken diet fecal samples. *Collinsella*, *Enterococcus*, *Escherichia*, *Parabacteroides* and *Parasutterella* only appear in beef diet fecal samples. *Lactobacillus*, *Prevotella* and *Turicibacter* only appear in kibble diet fecal samples. *Alloprevotella* and *Faecalibacterium* appear in chicken and kibble diet fecal samples. *Blautia*, *Clostridium_sensu_stricto*, *Roseburia* and *Megamonas* appear in chicken and beef diet fecal samples. 
+
 ```{r}
 melted_phyloseq %>%
+  filter(Abundance > 250) %>%
   filter(food %in% c("chicken")) %>%
 ggplot(aes(x = Genus, y = Abundance, fill = additive)) +
   geom_col(position = position_dodge()) +
@@ -103,8 +122,13 @@ ggtitle("Abundance of Bacterial Genus in
        Chicken Diet With or Without Additives")
 ```
 
+**Figure 5**
+
+In figure 5, we can see that abundance of *Fusobacterium* is the highest among control diet fecal samples. *Anaerobiospirillum*, *Clostridium_XVII*, *Roseburia* and *Sutterella* only appear in yeast cell wall added diet fecal samples. *Alloprevotella*, *Blautia*, *Clostridium_sensu_stricto*, *Faecalibacterium* and *Holdemanella* only appear in inulin added diet fecal samples. *Allobaculum*, *Megamonas* and *Streptococcus* appear in inuline and yeast cell wall added diet fecal samples.
+
 ```{r}
 melted_phyloseq %>%
+  filter(Abundance > 250) %>%
   filter(food %in% c("beef")) %>%
 ggplot(aes(x = Genus, y = Abundance, fill = additive)) +
   geom_col(position = position_dodge()) +
@@ -112,6 +136,9 @@ ggplot(aes(x = Genus, y = Abundance, fill = additive)) +
 ggtitle("Abundance of Bacterial Genus in Beef Diet With or Without Additives")
 ```
 
+**Figure 6**
+
+In figure 6, we can see that abundance of *Fusobacterium* is the highest among inulin added diet fecal samples. *Cellulosilyticum* and *Parabacteroides* only appear in yeast cell wall added diet fecal samples. *Enterococcus* and *Escherichia* only appear in beef control diet fecal samples. *Holdemanella* only appear in inulin added diet fecal samples. *Allobaculum* appear in inulin and yeast cell wall added diet fecal samples. *Blautia* appear in inulin added and beef control diet fecal samples. *Clostridium_sensu_stricto*, *Collinsella*, *Parasutterella* and *Roseburia* appear in yeast cell added and beef control diet fecal samples.
 
 # Discussion
 
