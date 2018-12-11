@@ -14,7 +14,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introduction
 
-Add about 2-3 pages here. Across the whole manuscript, you should cite at least 20 peer reviewed articles.
+Dogs have been the companion of humans since their first taming thousands of years ago. Their role in human life is very remarkable as they offer protection and friendship to their owners, whereas their owners offer shelter and food to them. For every dog owner, the health of their dog is an important topic, and one of the most important factors in dogs' health is diet, as feeding them with a wrong diet might cause diseases that might affect their cardio-vascular or digestive systems. While setting up a diet, it is important the consider the species and age of the animal as well as if the animal has a particular medical condition. Another important factor on dogs' diet is to whether feed them with processed or raw foods, but there are different opinions on whether processed or raw foods are safer for consumption. Processed dog foods such as kibbles or canned meats are known to be safer in terms of bacterial contamination, but most of them contain high amounts of preservatives and low amounts of nutrients. Moreover, they are subject to bacterial contamination as they are exposed to air and sunlight over time. Raw dog foods are usually contain a combination of meat, dairy products, vegatables and fruits and are known to be much nutritious than the processed foods, but they are much more vulnerable to bacterial contamination, thus, they need to be prepared in hygienic environments, kept frozen or freshly consumed by dogs. In order to find out the effects of raw meat and kibble diets on the gut bacterial microbiota, that is, the abundances of bacterial communities in guts of dogs, Beloshapla and her colleagues conducted a research project on dogs by feeding them with different raw diets of chicken and beef meat and with kibble diet over a period of time and then collecting samples from their feces. They also included fermentable fiber additives that may beneficially alter the gut microbiota, inulin and yeast cell wall, to some of the raw diets in order to see if it'll have a further effect. They found out that the 
+Beef-based diets increased *Escherichia* abundance, but decreased
+*Anaerobiospirillum* abundance when compared to chicken-based diets. Moreover, inulin decreased *Enterobacteriaceae* abundance and increased *Megamonas* abundance when compared to raw diets without additives. Inulin also decreased *Escherichia* and *Lactobacillus* abundances when compared to yeast cell wall, whereas yeast cell wall increased *Bifidobacterium* abundance compared to inulin.
 
 # Methods
 
@@ -38,7 +40,7 @@ I downloaded fastq files from NCBI with accession code PRJNA186650. Then, I inst
 
 # Results
 
-## Subsections are ok in the results section too
+As a result of our analysis, we found out that the major bacterial phyla in fecal samples are Actinobacteria, Bacteroidetes, Firmicutes, Fusobacteria and Proteobactera regardless of the diet and additives (Figure 1, Figure 2, Figure 3). 
 
 ```{r load-packages-and-data}
 # load packages as needed
@@ -70,7 +72,7 @@ ggtitle("Abundance of Bacterial Phyla by Diet")
 
 **Figure 1**
 
-In figure 1, we can see that Fusobacteria phylum is the most abundant phylum in beef and chicken diet fecal samples. Firmicutes is the most abundant phylum among the kibble diet fecal samples. Actinobacteria phylum is significantly high in beef diet fecal samples than the rest of the fecal samples.
+In figure 1, we can see that Fusobacteria phylum is the most abundant phylum in beef and chicken diet fecal samples. Firmicutes is the most abundant phylum among the kibble diet fecal samples. Actinobacteria phylum is significantly high in beef diet fecal samples than the rest of the fecal samples.  
 
 
 ```{r barplot-of-bacterial-phyla-abundance-in-chicken-diet}
