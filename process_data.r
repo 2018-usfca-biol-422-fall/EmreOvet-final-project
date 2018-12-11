@@ -1,8 +1,8 @@
-#!/bin/Rscript
+# !/bin/Rscript
 
-#Emre Ovet
-#November 28, 2018
-#eovet@dons.usfca.edu
+# Emre Ovet
+# November 28, 2018
+# eovet@dons.usfca.edu
 
 # Be sure to install these packages before running this script
 # They can be installed either with the intall.packages() function
@@ -193,14 +193,14 @@ phyloseq_obj <- phyloseq(otu_table(sequence_table_nochim,
                          sample_data(metadata_in), # metadata for each sample
                          tax_table(taxa))
 
-#Save the output of the phyloseq_obj into a binary Rdata file 
-#to be used more easily when doing data analysis
+# Save the output of the phyloseq_obj into a binary Rdata file 
+# to be used more easily when doing data analysis
 save(phyloseq_obj, file = "output/phyloseq_obj.Rdata")
 
-#Melt phyloseq data object into large data frame
-#psmelt function is a specialized melt function for melting phyloseq objects 
+# Melt phyloseq data object into large data frame
+# psmelt function is a specialized melt function for melting phyloseq objects 
 melted_phyloseq <- psmelt(phyloseq_obj)
 
-#Save the output of melted_phyloseq into a binary Rdata file 
-#to be used more easily when doing data analysis
+# Save the output of melted_phyloseq into a binary Rdata file 
+# to be used more easily when doing data analysis
 save(melted_phyloseq, file = "output/melted_phyloseq.Rdata")
