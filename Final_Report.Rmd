@@ -88,7 +88,7 @@ In figure 2, we can see that chicken control diet fecal samples have the highest
 ```{r}
 melted_phyloseq %>%
   filter(food %in% c("beef")) %>%
-ggplot(aes(x = Genus, y = Abundance, fill = additive)) +
+ggplot(aes(x = Phylum, y = Abundance, fill = additive)) +
   geom_col(position = position_dodge()) +
   theme(axis.text = element_text(angle = 90, hjust = 1)) +
 ggtitle("Abundance of Bacterial Phylum in Beef Diet With or Without Additives")
@@ -104,7 +104,7 @@ melted_phyloseq %>%
   ggplot(aes(x = Genus, y = Abundance, fill = food)) +
   geom_col(position = position_dodge()) +
   theme(axis.text = element_text(angle = 90, hjust = 1)) +
-ggtitle("Abundance of Bacterial Genus by Diet")
+ggtitle("Abundance of Bacterial Genera by Diet")
 ```
 
 **Figure 4**
@@ -118,7 +118,7 @@ melted_phyloseq %>%
 ggplot(aes(x = Genus, y = Abundance, fill = additive)) +
   geom_col(position = position_dodge()) +
   theme(axis.text = element_text(angle = 90, hjust = 1)) +
-ggtitle("Abundance of Bacterial Genus in
+ggtitle("Abundance of Bacterial Genera in
        Chicken Diet With or Without Additives")
 ```
 
@@ -133,7 +133,7 @@ melted_phyloseq %>%
 ggplot(aes(x = Genus, y = Abundance, fill = additive)) +
   geom_col(position = position_dodge()) +
   theme(axis.text = element_text(angle = 90, hjust = 1)) +
-ggtitle("Abundance of Bacterial Genus in Beef Diet With or Without Additives")
+ggtitle("Abundance of Bacterial Genera in Beef Diet With or Without Additives")
 ```
 
 **Figure 6**
