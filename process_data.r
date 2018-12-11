@@ -1,4 +1,4 @@
-# !/bin/Rscript
+#!/bin/Rscript
 
 # Emre Ovet
 # November 28, 2018
