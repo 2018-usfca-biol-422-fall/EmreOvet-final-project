@@ -1,11 +1,12 @@
 #!/bin/bash
 
-# the script to download to fastq from NCBI
+# the script to download SRA files from NCBI
 
 #Emre Ovet
 #November 28, 2018
 #eovet@dons.usfca.edu
 
+#Make sure to download SRA Toolkit online before running this code
 
 for SRA_number in $(cut -f 6 data/metadata/SraRunTable.txt | tail -n +2)
 do
