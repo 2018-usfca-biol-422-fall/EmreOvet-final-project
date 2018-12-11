@@ -39,7 +39,8 @@ I downloaded fastq files from NCBI with accession code PRJNA186650. Then, I inst
 
 # Results
 
-As a result of our analysis, we found out that the major bacterial phyla in fecal samples are Actinobacteria, Bacteroidetes, Firmicutes, Fusobacteria and Proteobactera regardless of the diet and additives (Figure 1, Figure 2, Figure 3). There are neglectable amounts of Chlotoplast in 
+As a result of our analysis, we found out that the major bacterial phyla in fecal samples are Actinobacteria, Bacteroidetes, Firmicutes, Fusobacteria and Proteobactera regardless of the diet and additives (Figure 1, Figure 2, Figure 3). Beef diet fecal samples have the highest abundances of each bacterial phyla compared to chicken and kibble diet samples except for Firmicutes, which is the highest in chicken diet fecal samples (Figure 1). The abundances of each bacterial phyla in chicken fecal diet samples are always between the abundances of beef and kibble diet fecal samples, except for Firmucutes (Figure 1). Kibble diet fecal samples have the lowest abundances of each bacterial phyla compared to beef and chicken diet fecal samples with no exception (Figure 1).
+Inulin added chicken diet fecal samples have increased abundances of Actinobacteria and Firmicutes and decreased abundance of Fusobacteria compared to control chicken diet fecal samples (Figure 2). Yeast cell wall added chicken diet fecal samples have increased abundances of Proteobacteria and Firmicutes and decreased abundances of Actinobacteria and Fusobacteria compared to control chicken diet fecal samples (Figure 2). Inulin added beef diet fecal samples have increased abundances of Bacteriodetes, Firmicutes and Fusobacteria and decreased abundances of Actinobacteria and Proteobacteria compared to control beef fecal samples (Figure 3). Yeast cell wall added beef diet fecal samples have increased abundances of Actinobacteria, Bacteroidetes, Fusobacteria and Proteobacteria compared to control beef fecal samples (Figure 3). 
 
 ```{r load-packages-and-data}
 # load packages as needed
@@ -71,7 +72,7 @@ ggtitle("Abundance of Bacterial Phyla by Diet")
 
 **Figure 1**
 
-In figure 1, we can see that Fusobacteria phylum is the most abundant phylum in beef and chicken diet fecal samples. Firmicutes is the most abundant phylum among the kibble diet fecal samples. Actinobacteria phylum is significantly high in beef diet fecal samples than the rest of the fecal samples. Kibble diet fecal samples has overall the lowest abundances in each bacterial phyla. There is a small abundance of Cyanobacteria which is close to 0, thus, negligible. 
+In figure 1, we can see that Fusobacteria phylum is the most abundant phylum in beef and chicken diet fecal samples with 4100 and 2300 sequence reads, respectively. Firmicutes is the most abundant phylum among the kibble diet fecal samples with 700 sequence reads. Actinobacteria phylum is significantly high in beef diet fecal samples than the rest of the fecal samples with 600 sequence reads. Kibble diet fecal samples has overall the lowest abundances in each bacterial phyla. There is a small abundance of Cyanobacteria in inulin and control chicken diet fecal samples which is close to 1, thus, negligible. There is also  an abundance of unidentified phyla in each of the diet fecal samples varying from 1 to 5 sequence reads.
 
 
 ```{r barplot-of-bacterial-phyla-abundance-in-chicken-diet}
@@ -90,7 +91,7 @@ ggtitle("Abundance of Bacterial Phyla in
 
 **Figure 2**
 
-In figure 2, we can see that chicken control diet fecal samples have the highest Fusobacteria abundance. Bacteriodetes abundance is almost equal in all additive samples. Firmicutes abundance is the highest in inulin added chicken diet fecal samples. 
+In figure 2, we can see that chicken control diet fecal samples have the highest Fusobacteria abundance with 2400 sequence reads. Bacteriodetes abundance is almost equal in all additive and non additive samples as they are all between 800 and 900 sequence reads. Inulin has increased the abundance of Firmicutes and Actinobacteria phyla in fecal samples compared to control chicken and yeast cell wall, whereas yeast cell wall has increased the abundance Proteobacteriaa in fecal samples compared to control chicken and inulin. There is a small abundance of Cyanobacteria which is close to 1, thus, negligible. There is also an abundance of unidentified phyla in control chicken and yeast cell wall diet fecal samples varying from 1 to 5 sequence reads.
 
 ```{r barplot-of-bacterial-phyla-abundance-in-beef-diet}
 # This code creates a barplot of the bacterial phyla abundance
@@ -107,7 +108,7 @@ ggtitle("Abundance of Bacterial Phyla in Beef Diet With or Without Additives")
 
 **Figure 3**
 
-In figure 3, we can see that Fusobacteria abundance is significantly higher in inulin added diet fecal samples than the rest of the additive samples. No Cyanobacteria or Chloroplast is present in any of the groups. Actinobacteria abundance is higher in yeast cell wall added beef diet fecal samples than the rest of the additive diet groups.
+In figure 3, we can see that Fusobacteria abundance is significantly higher in inulin added diet fecal samples than the rest of the additive samples with 4100 sequence reads. No Cyanobacteria or Chloroplast is present in any of the groups. Inulin has increased the abundance of Fusobacteria in fecal samples compared to control beef and yeast cell wall, whereas yeast cell wall has increased the abundance of Actinobacteria and Proteobacteria compared to control beef and inulin. There is an abundance of unidentified phyla in control beef and inulin diet fecal samples varying from 1 to 5 sequence reads.
 
 ```{r barplot-of-bacterial-genera-abundance-by-diet}
 # This code creates a barplot of the bacterial genera abundance
@@ -125,7 +126,7 @@ ggtitle("Abundance of Bacterial Genera by Diet")
 
 **Figure 4**
 
-In figure 4, we can see that there is a high amount of unidentified genus among all groups. Abundance of *Fusobacterium* genus is significantly high in beef and chicken diet fecal samples. *Anaerobiospirillum*, *Clostridium_XVII*, *Streptococcus* and *Sutterella* only appear in chicken diet fecal samples. *Collinsella*, *Enterococcus*, *Escherichia*, *Parabacteroides* and *Parasutterella* only appear in beef diet fecal samples. *Lactobacillus*, *Prevotella* and *Turicibacter* only appear in kibble diet fecal samples. *Alloprevotella* and *Faecalibacterium* appear in chicken and kibble diet fecal samples. *Blautia*, *Clostridium_sensu_stricto*, *Roseburia* and *Megamonas* appear in chicken and beef diet fecal samples. 
+In figure 4, we can see that there is a high amount of unidentified genus among all groups. Abundance of *Fusobacterium* genus is significantly high in beef and chicken diet fecal samples, with 4100 and 2300 sequence reads, respectively. *Anaerobiospirillum*, *Clostridium_XVII*, *Streptococcus* and *Sutterella* only appear in chicken diet fecal samples. *Collinsella*, *Enterococcus*, *Escherichia*, *Parabacteroides* and *Parasutterella* only appear in beef diet fecal samples. *Lactobacillus*, *Prevotella* and *Turicibacter* only appear in kibble diet fecal samples. *Alloprevotella* and *Faecalibacterium* appear in chicken and kibble diet fecal samples. *Blautia*, *Clostridium_sensu_stricto*, *Roseburia* and *Megamonas* appear in chicken and beef diet fecal samples. 
 
 ```{r barplot-of-bacterial-genera-abundance-in-chicken-diet}
 # This code creates a barplot of the bacterial genera abundance
@@ -145,7 +146,7 @@ ggtitle("Abundance of Bacterial Genera in
 
 **Figure 5**
 
-In figure 5, we can see that abundance of *Fusobacterium* is the highest among control diet fecal samples. *Anaerobiospirillum*, *Clostridium_XVII*, *Roseburia* and *Sutterella* only appear in yeast cell wall added diet fecal samples. *Alloprevotella*, *Blautia*, *Clostridium_sensu_stricto*, *Faecalibacterium* and *Holdemanella* only appear in inulin added diet fecal samples. *Allobaculum*, *Megamonas* and *Streptococcus* appear in inuline and yeast cell wall added diet fecal samples.
+In figure 5, we can see that abundance of *Fusobacterium* is the highest among control diet fecal samples with 2300 sequence reads. *Anaerobiospirillum*, *Clostridium_XVII*, *Roseburia* and *Sutterella* only appear in yeast cell wall added diet fecal samples. *Alloprevotella*, *Blautia*, *Clostridium_sensu_stricto*, *Faecalibacterium* and *Holdemanella* only appear in inulin added diet fecal samples. *Allobaculum*, *Megamonas* and *Streptococcus* appear in inuline and yeast cell wall added diet fecal samples.
 
 ```{r barplot-of-bacterial-genera-abundance-in-beef-diet}
 # This code creates a barplot of the bacterial genera abundance
@@ -164,7 +165,7 @@ ggtitle("Abundance of Bacterial Genera in Beef Diet With or Without Additives")
 
 **Figure 6**
 
-In figure 6, we can see that abundance of *Fusobacterium* is the highest among inulin added diet fecal samples. *Cellulosilyticum* and *Parabacteroides* only appear in yeast cell wall added diet fecal samples. *Enterococcus* and *Escherichia* only appear in beef control diet fecal samples. *Holdemanella* only appear in inulin added diet fecal samples. *Allobaculum* appear in inulin and yeast cell wall added diet fecal samples. *Blautia* appear in inulin added and beef control diet fecal samples. *Clostridium_sensu_stricto*, *Collinsella*, *Parasutterella* and *Roseburia* appear in yeast cell added and beef control diet fecal samples.
+In figure 6, we can see that abundance of *Fusobacterium* is the highest among inulin added diet fecal samples with 4100 sequence reads. *Cellulosilyticum* and *Parabacteroides* only appear in yeast cell wall added diet fecal samples. *Enterococcus* and *Escherichia* only appear in beef control diet fecal samples. *Holdemanella* only appear in inulin added diet fecal samples. *Allobaculum* appear in inulin and yeast cell wall added diet fecal samples. *Blautia* appear in inulin added and beef control diet fecal samples. *Clostridium_sensu_stricto*, *Collinsella*, *Parasutterella* and *Roseburia* appear in yeast cell added and beef control diet fecal samples.
 
 # Discussion
 
