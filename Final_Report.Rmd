@@ -27,9 +27,9 @@ In the research study of Beloshapka et al., 6 spayed female, healthy adult beagl
 
 Following a 14-day adaptation period, one fresh fecal sample was collected by Beloshapka et al. within 15 min of defecation on either day 15 or day 16 of each period. It is not included in the paper what method and equipment they used to collect the fecal samples. The fresh feces were weighed and aliquoted into sterile cryogenic vials and frozen at −80 °C until DNA extraction [@beloshapka2013fecal].
 
-Genomic DNA was extracted by Beloshapka et al. using the repeated bead beater method with QIAamp DNA Stool Mini DNA extraction Kit. Once the DNA was eluted, all samples were purified using the QIAquick PCR Purification Kit. Extracted DNA was quantified using NanoDrop ND-1000 spectrophotometer. Genomic DNA quality was assessed using agarose gel electrophoresis [@beloshapka2013fecal]. Genomic DNA was diluted to 20 ng μL−1 in preparation for 454-pyrosequencing. Bacterial tag-encoded FLX-Titanium amplicon pyrosequencing based upon the V4-V6 region of the 16S rRNA gene was performed. The 16S rRNA universal Eubacterial primers 530F and 1100R were used to amplify the 600-bp region. In preparation for FLX-Titanium sequencing, DNA fragment size and concentration were accurately measured using DNA chips under a Bio-Rad Experion Automated Electrophoresis Station and a TBS-380 Fluorometer. A four-region 454 sequencing run was performed on a GS PicoTiterPlate using the Genome Sequencer FLX System. 
+ Genomic DNA was extracted by Beloshapka et al. using the repeated bead beater method with QIAamp DNA Stool Mini DNA extraction Kit. Once the DNA was eluted, all samples were purified using the QIAquick PCR Purification Kit. Extracted DNA was quantified using NanoDrop ND-1000 spectrophotometer. Genomic DNA quality was assessed using agarose gel electrophoresis [@beloshapka2013fecal]. Genomic DNA was diluted to 20 ng μL−1 in preparation for 454-pyrosequencing. Bacterial tag-encoded FLX-Titanium amplicon pyrosequencing based upon the V4-V6 region of the 16S rRNA gene was performed. The 16S rRNA universal Eubacterial primers 530F and 1100R were used to amplify the 600-bp region. In preparation for FLX-Titanium sequencing, DNA fragment size and concentration were accurately measured using DNA chips under a Bio-Rad Experion Automated Electrophoresis Station and a TBS-380 Fluorometer. A four-region 454 sequencing run was performed on a GS PicoTiterPlate using the Genome Sequencer FLX System. 
 
-Beloshapka et al. used quantitative polymerase chain reaction to measure the abundance of *Bifidobacterium* and *Lactobacillus*. Fecal samples were extracted using ZR Fecal DNA Extraction Kit along with 
+ Beloshapka et al. used quantitative polymerase chain reaction to measure the abundance of *Bifidobacterium* and *Lactobacillus*. Fecal samples were extracted using ZR Fecal DNA Extraction Kit along with 
 SYBR-based reaction mixtures. PCR conditions were 95°C for 2 minutes and 40 cycles at 95°C for 5 seconds and 10 seconds at 60°C for *Bifidobacterium* and were 58°C for *Lactobacillus*. A melt curve analysis was performed for 1 minute at 95 °C, 1 minute at 55 °C, and 80 cycles of 0.5°C increments each 10 seconds. The PCR conditions were 95 °C for 20 seconds, 40 cycles at 95 °C for 5 seconds, and 10 seconds at the optimized annealing temperature.
 
 ## Computational
@@ -70,7 +70,7 @@ melted_phyloseq %>%
 ggtitle("Abundance of Bacterial Phyla by Diet")
 ```
 
-**Figure 1**
+**Figure 1** Barplot of abundance of bacterial phyla in the dog fecal samples by diet. Colors were used to differ the data obtained by each fecal sample group in respect to the diet. These diets are raw beef, raw chicken and kibble. Data on raw diets contain the information for inulin added raw diets, yeast cell wall added raw diets and non additive raw diets as a whole. 
 
 In figure 1, we can see that Fusobacteria phylum is the most abundant phylum in beef and chicken diet fecal samples with 4100 and 2300 sequence reads, respectively. Firmicutes is the most abundant phylum among the kibble diet fecal samples with 700 sequence reads. Actinobacteria phylum is significantly high in beef diet fecal samples than the rest of the fecal samples with 600 sequence reads. Kibble diet fecal samples has overall the lowest abundances in each bacterial phyla. There is a small abundance of Cyanobacteria in inulin and control chicken diet fecal samples which is close to 1, thus, negligible. There is also  an abundance of unidentified phyla in each of the diet fecal samples varying from 1 to 5 sequence reads.
 
@@ -79,7 +79,7 @@ In figure 1, we can see that Fusobacteria phylum is the most abundant phylum in 
 # This code creates a barplot of the bacterial phyla abundance
 # between the fecal samples of beagles obtained at the end of their
 # digestion of chicken diet with either inulin, yeast cell wall or no
-# additives
+# additives. 
 melted_phyloseq %>%
   filter(food %in% c("chicken")) %>%
 ggplot(aes(x = Phylum, y = Abundance, fill = additive)) +
@@ -89,9 +89,9 @@ ggtitle("Abundance of Bacterial Phyla in
        Chicken Diet With or Without Additives")
 ```
 
-**Figure 2**
+**Figure 2** Barplot of abundance of bacterial phyla in the dog fecal samples by chicken diet with or without additives. Colors were used to differ the data obtained by each fecal sample group in respect to the presence of additives. Additives include inulin and yeast cell wall. YCW in the additives section is the abbreviation of yeast cell wall. This figure is obtained by filtering out the data for the chicken diet fecal samples.
 
-In figure 2, we can see that chicken control diet fecal samples have the highest Fusobacteria abundance with 2400 sequence reads. Bacteriodetes abundance is almost equal in all additive and non additive samples as they are all between 800 and 900 sequence reads. Inulin has increased the abundance of Firmicutes and Actinobacteria phyla in fecal samples compared to control chicken and yeast cell wall, whereas yeast cell wall has increased the abundance Proteobacteriaa in fecal samples compared to control chicken and inulin. There is a small abundance of Cyanobacteria which is close to 1, thus, negligible. There is also an abundance of unidentified phyla in control chicken and yeast cell wall diet fecal samples varying from 1 to 5 sequence reads.
+This figure is obtained by filtering out the data for the chicken diet fecal samples. In figure 2, we can see that chicken control diet fecal samples have the highest Fusobacteria abundance with 2400 sequence reads. Bacteriodetes abundance is almost equal in all additive and non additive samples as they are all between 800 and 900 sequence reads. Inulin has increased the abundance of Firmicutes and Actinobacteria phyla in fecal samples compared to control chicken and yeast cell wall, whereas yeast cell wall has increased the abundance Proteobacteriaa in fecal samples compared to control chicken and inulin. There is a small abundance of Cyanobacteria which is close to 1, thus, negligible. There is also an abundance of unidentified phyla in control chicken and yeast cell wall diet fecal samples varying from 1 to 5 sequence reads.
 
 ```{r barplot-of-bacterial-phyla-abundance-in-beef-diet, echo = FALSE}
 # This code creates a barplot of the bacterial phyla abundance
@@ -106,7 +106,7 @@ ggplot(aes(x = Phylum, y = Abundance, fill = additive)) +
 ggtitle("Abundance of Bacterial Phyla in Beef Diet With or Without Additives")
 ```
 
-**Figure 3**
+**Figure 3** Barplot of abundance of bacterial phyla in the dog fecal samples by beef diet with or without additives. Colors were used to differ the data obtained by each fecal sample group in respect to the presence of additives. Additives include inulin and yeast cell wall. YCW in the additives section is the abbreviation of yeast cell wall. This figure is obtained by filtering out the data for the beef diet fecal samples.
 
 In figure 3, we can see that Fusobacteria abundance is significantly higher in inulin added diet fecal samples than the rest of the additive samples with 4100 sequence reads. No Cyanobacteria or Chloroplast is present in any of the groups. Inulin has increased the abundance of Fusobacteria in fecal samples compared to control beef and yeast cell wall, whereas yeast cell wall has increased the abundance of Actinobacteria and Proteobacteria compared to control beef and inulin. There is an abundance of unidentified phyla in control beef and inulin diet fecal samples varying from 1 to 5 sequence reads.
 
@@ -115,7 +115,7 @@ In figure 3, we can see that Fusobacteria abundance is significantly higher in i
 # between the fecal samples of beagles obtained at the end of their
 # digestion of either beef, chicken or kibble diet. Since the number
 # of genera is too high, I filter out those with an abundance that is
-# higher than 250
+# higher than 250 sequence reads
 melted_phyloseq %>%
   filter(Abundance > 250) %>%
   ggplot(aes(x = Genus, y = Abundance, fill = food)) +
@@ -124,7 +124,7 @@ melted_phyloseq %>%
 ggtitle("Abundance of Bacterial Genera by Diet")
 ```
 
-**Figure 4**
+**Figure 4** Barplot of abundance of bacterial genera in the dog fecal samples by diet. Colors were used to differ the data obtained by each fecal sample group in respect to the diet. These diets are raw beef, raw chicken and kibble. Data on raw diets contain the information for inulin added raw diets, yeast cell wall added raw diets and non additive raw diets as a whole. The genera that has an abundance lower than 250 sequence reads were removed.
 
 In figure 4, we can see that there is a high amount of unidentified genus among all groups. Abundance of *Fusobacterium* genus is significantly high in beef and chicken diet fecal samples, with 4100 and 2300 sequence reads, respectively. *Anaerobiospirillum*, *Clostridium_XVII*, *Streptococcus* and *Sutterella* only appear in chicken diet fecal samples. *Collinsella*, *Enterococcus*, *Escherichia*, *Parabacteroides*, *Cellulosilyticum* and *Parasutterella* only appear in beef diet fecal samples. *Lactobacillus*, *Prevotella* and *Turicibacter* only appear in kibble diet fecal samples. *Alloprevotella* and *Faecalibacterium* appear in chicken and kibble diet fecal samples. *Blautia*, *Clostridium_sensu_stricto*, *Roseburia* and *Megamonas* appear in chicken and beef diet fecal samples. There is a high abundance of unknown bacterial genera in all diet fecal samples varying between 250 and 1100 sequence reads.
 
@@ -133,7 +133,7 @@ In figure 4, we can see that there is a high amount of unidentified genus among 
 # between the fecal samples of beagles obtained at the end of their
 # digestion of chicken diet with either inulin, yeast cell wall or no
 # additives. Since the number of genera is too high, I filter out 
-# those with an abundance that is higher than 250
+# those with an abundance that is higher than 250 sequence reads
 melted_phyloseq %>%
   filter(Abundance > 250) %>%
   filter(food %in% c("chicken")) %>%
@@ -144,7 +144,7 @@ ggtitle("Abundance of Bacterial Genera in
        Chicken Diet With or Without Additives")
 ```
 
-**Figure 5**
+**Figure 5** Barplot of abundance of bacterial genera in the dog fecal samples by chicken diet with or without additives. Colors were used to differ the data obtained by each fecal sample group in respect to the presence of additives. Additives include inulin and yeast cell wall. YCW in the additives section is the abbreviation of yeast cell wall. The genera that has an abundance lower than 250 sequence reads were removed. This figure is obtained by filtering out the data for the chicken diet fecal samples.
 
 In figure 5, we can see that abundance of *Fusobacterium* is the highest among control diet fecal samples with 2300 sequence reads. *Anaerobiospirillum*, *Clostridium_XVII*, *Roseburia* and *Sutterella* only appear in yeast cell wall added diet fecal samples. *Alloprevotella*, *Blautia*, *Clostridium_sensu_stricto*, *Faecalibacterium* and *Holdemanella* only appear in inulin added diet fecal samples. *Allobaculum*, *Megamonas* and *Streptococcus* appear in inuline and yeast cell wall added diet fecal samples. There is a high abundance of unknown bacterial genera in all additive and non additive chicken diet fecal samples varying between 750 and 1200 sequence reads.
 
@@ -153,7 +153,7 @@ In figure 5, we can see that abundance of *Fusobacterium* is the highest among c
 # between the fecal samples of beagles obtained at the end of their
 # digestion of beef diet with either inulin, yeast cell wall or no
 # additives. Since the number of genera is too high, I filter out 
-# those with an abundance that is higher than 250
+# those with an abundance that is higher than 250 sequence reads
 melted_phyloseq %>%
   filter(Abundance > 250) %>%
   filter(food %in% c("beef")) %>%
@@ -163,7 +163,7 @@ ggplot(aes(x = Genus, y = Abundance, fill = additive)) +
 ggtitle("Abundance of Bacterial Genera in Beef Diet With or Without Additives")
 ```
 
-**Figure 6**
+**Figure 6** Barplot of abundance of bacterial genera in the dog fecal samples by beef diet with or without additives. Colors were used to differ the data obtained by each fecal sample group in respect to the presence of additives. Additives include inulin and yeast cell wall. YCW in the additives section is the abbreviation of yeast cell wall. The genera that has an abundance lower than 250 sequence reads were removed. This figure is obtained by filtering out the data for the beef diet fecal samples.
 
 In figure 6, we can see that abundance of *Fusobacterium* is the highest among inulin added diet fecal samples with 4100 sequence reads. *Cellulosilyticum* and *Parabacteroides* only appear in yeast cell wall added diet fecal samples. *Enterococcus* and *Escherichia* only appear in beef control diet fecal samples. *Holdemanella* only appear in inulin added diet fecal samples. *Allobaculum* appear in inulin and yeast cell wall added diet fecal samples. *Blautia* appear in inulin added and beef control diet fecal samples. *Clostridium_sensu_stricto*, *Collinsella*, *Parasutterella* and *Roseburia* appear in yeast cell added and beef control diet fecal samples. There is a high abundance of unknown bacterial genera in all additive and non additive beef diet fecal samples varying between 400 and 900 sequence reads.
 
