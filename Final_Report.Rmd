@@ -1,6 +1,6 @@
 ---
-title: "Final Report: Your Title Here"
-author: "Don Francisco"
+title: "Final Report: Effects Of Kibble And Raw Meat Diets With Or Without Additives On Fecal Microbial Communities Of Healthy Adult Beagles"
+author: "Emre Ovet"
 date: "December 5, 2018"
 output:
     github_document: default
@@ -14,47 +14,160 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introduction
 
-Add about 2-3 pages here. Across the whole manuscript, you should cite at least 20 peer reviewed articles.
+Dogs have been the companion of humans since their first taming thousands of years ago [@savolainen2002genetic]. Their role in human life is very remarkable as they offer protection and friendship to their owners, whereas their owners offer shelter and food to them. For every dog owner, the health of their dog is an important topic, and one of the most important factors in dogs' health is diet, as feeding them with a wrong diet might cause diseases that might affect their cardio-vascular or digestive systems [@moore1982gastrointestinal]. While setting up a diet, it is important the consider the species and age of the animal as well as if the animal has a particular medical condition. Another important factor on dogs' diet is to whether feed them with processed or raw foods, but there are different opinions on whether processed or raw foods are safer for consumption. Processed dog foods such as kibbles or canned meats are known to be safer in terms of bacterial contamination, but most of them contain high amounts of preservatives and low amounts of nutrients [@alomar2006nutritional]. Moreover, they are subject to bacterial contamination as they are exposed to air and sunlight over time. Raw dog foods are usually contain a combination of meat, dairy products, vegetables and fruits and are known to be much nutritious than the processed foods, but they are much more vulnerable to bacterial contamination, thus, they need to be prepared in hygienic environments, kept frozen or freshly consumed by dogs [@finley2007risk]. In order to find out the effects of raw meat and kibble diets on the gut bacterial microbiota, that is, the abundances of bacterial communities in guts of dogs, Beloshapla and her colleagues conducted a research project on dogs by feeding them with different raw diets of chicken and beef meat and with kibble diet over a period of time and then collecting samples from their feces [@beloshapka2013fecal]. They also included fermentable fiber additives that may beneficially alter the gut microbiota, inulin and yeast cell wall, to some of the raw diets in order to see if it'll have a further effect. They found out that the Beef-based diets increased *Escherichia* abundance, but decreased *Anaerobiospirillum* abundance when compared to chicken-based diets. Moreover, inulin decreased *Enterobacteriaceae* abundance and increased *Megamonas* abundance when compared to raw diets without additives [@beloshapka2013fecal]. Inulin also decreased *Escherichia* and *Lactobacillus* abundances when compared to yeast cell wall, whereas yeast cell wall increased *Bifidobacterium* abundance compared to inulin [@beloshapka2013fecal]. In the light of the findings of  Beloshapka et al., we decided to further analyse this data and ask "Which one of the diets prepared by Beloshapka et al., that are raw chicken with inulin, raw chicken with yeast cell wall, raw chicken with no additives, raw beef with inulin, raw beef with yeast cell wall, raw beef with no additives or kibble, will lead to lowest abundance of pathogenic bacteria in dog guts?" We'll hypothesize that the beef diet with inulin leads to the highest abundance of pathogenic bacteria. We believe that this is a significant topic because by finding out the diet that leads to the highest abundance of pathogenic bacteria in dog guts, we can encourage the dog owners not to feed their dogs on that diet which would result in a decrease in the digestive diseases among dogs that is caused by pathogenic bacteria. This would further decrease the number of dog deaths related to digestive diseases and all the dogs around the world would have an increased life quality. In order to test our hypothesis, we'll download the SRA files of this experiment from NCBI and create plots using the data and metadata. We'll create bar plots on the abundance of bacterial phyla by diet overall, by raw chicken diet with or without additives and by raw beef with or without additives in order to see if any unusual phylum of bacteria that is pathogenic present in the fecal samples in respect to the diet. After that, we'll create bar plots on the abundance of bacterial genera by diet overall, by raw chicken diet with or without additives and by raw beef with or without additives to see how many different pathogenic bacterial genera does the fecal samples have in respect to the diet.
+
 
 # Methods
 
 ## Study design
 
-Add about half a page here. In this section instead of first person (I/we), use the authors of the paper you selected, since you'll just be describing what they did, based on the methods in their paper.
+In the research study of Beloshapka et al., 6 spayed female, healthy adult beagle dogs with ages varying from 5 to 6 years were used. Six raw diets, based on animal meats and organs, eggs, fruits, and vegetables, were formulated by Beloshapka et al to contain approximately 25–30% crude protein and 45–50% fat [@beloshapka2013fecal]. The formulated diets were beef control, beef with 1.4% inulin dry matter basis, beef with 1.4% yeast cell wall, chicken control, chicken with 1.4% inulin and chicken with 1.4% yeast cell wall. It is not included in the paper what organs, fruits and vegetables were used in those raw diets and what were the portions of each ingredient, what brand of kibble was used and what was the ingredients of the kibble. Dogs were fed twice daily, first at 8:00 AM and then at 17:00 PM with either formulated raw diets or kibble. The diets were truly raw and were not treated for pathogens and they were kept frozen and thawed under refrigeration in storage containers 2 days prior to feeding. Sub samples of all six thawed diets were submitted to the University of Illinois Veterinary Medicine Diagnostic Laboratory for general cultures, all of which came back negative or below detectible limits [@beloshapka2013fecal].
 
 ## Sample origin and sequencing
 
-Add about half a page here. In this section instead of first person (I/we), use the authors of the paper you selected, since you'll just be describing what they did, based on the methods in their paper.
+Following a 14-day adaptation period, one fresh fecal sample was collected by Beloshapka et al. within 15 min of defecation on either day 15 or day 16 of each period. It is not included in the paper what method and equipment they used to collect the fecal samples. The fresh feces were weighed and aliquoted into sterile cryogenic vials and frozen at −80 °C until DNA extraction [@beloshapka2013fecal].
+
+ Genomic DNA was extracted by Beloshapka et al. using the repeated bead beater method with QIAamp DNA Stool Mini DNA extraction Kit. Once the DNA was eluted, all samples were purified using the QIAquick PCR Purification Kit. Extracted DNA was quantified using NanoDrop ND-1000 spectrophotometer. Genomic DNA quality was assessed using agarose gel electrophoresis [@beloshapka2013fecal]. Genomic DNA was diluted to 20 ng μL−1 in preparation for 454-pyrosequencing. Bacterial tag-encoded FLX-Titanium amplicon pyrosequencing based upon the V4-V6 region of the 16S rRNA gene was performed. The 16S rRNA universal Eubacterial primers 530F and 1100R were used to amplify the 600-bp region. In preparation for FLX-Titanium sequencing, DNA fragment size and concentration were accurately measured using DNA chips under a Bio-Rad Experion Automated Electrophoresis Station and a TBS-380 Fluorometer. A four-region 454 sequencing run was performed on a GS PicoTiterPlate using the Genome Sequencer FLX System [@metzker2010sequencing]. 
+
+ Beloshapka et al. used quantitative polymerase chain reaction to measure the abundance of *Bifidobacterium* and *Lactobacillus*. Fecal samples were extracted using ZR Fecal DNA Extraction Kit along with SYBR-based reaction mixtures. PCR conditions were 95°C for 2 minutes and 40 cycles at 95°C for 5 seconds and 10 seconds at 60°C for *Bifidobacterium* and were 58°C for *Lactobacillus*. A melt curve analysis was performed for 1 minute at 95 °C, 1 minute at 55 °C, and 80 cycles of 0.5°C increments each 10 seconds. The PCR conditions were 95 °C for 20 seconds, 40 cycles at 95 °C for 5 seconds, and 10 seconds at the optimized annealing temperature.
 
 ## Computational
 
-These are the methods you used to do your bioinformatic analyses analyses. Should probably be between 0.5 and 1 pages. At a very minimum should include citations for DADA2 and phyloseq if you are doing an amplicon study, or other citations as appropriate.
+I downloaded fastq files from NCBI with accession code PRJNA186650. Then, I installed general-use packages from GitHub and bioconductor. I set the base path for my input data files from fecal microbial community study, sorted the path to ensure samples are in order, extracted sample names and specified the full path for each of the filenames forward reads. Next, I used DADA2, a software package that corrects and models Illumina-sequenced amplicon errors to plot the quality profiles of each sample [@callahan2016]. After checking those quality profiles,I created a diretory called "filtered_reads_path", placed my filtered files inside the filtered/ subdirectory and trimmed the lower quality sequences using DADA2 [@callahan2016]. Then, I generated a table of read counts before and after trimming. This was followed by building error models from each of the samples and visualizing errors with plots to make sure error models matched my data. After checking the plots, I removed all the replicated sequences to increase DADA2's accuracy [@callahan2016]. Next, I named the dereplicated class objects by the sample names. I ran DADA to apply the core sample inference algorithm to the dereplicated data [@callahan2016]. After DADA2 ran succesfully, I created an histogram of sequence lenghts to check the distribution of trimmed and denoised sequences. Then, I removed the chimeras from my cleaned reads to obtain just non-chimeric reads. After that, I builded a table of pipeline read counts to see how many sequences remain at each step of the pipeline. Next, I assigned taxonomy to each sequence variant. After assigning taxonomy, I extracted sequences to Fasta and builded a phylogeny using DADA2 [@callahan2016]. Finally, I read in the phylogeny and construct a phyloseq object by using the phyloseq package, a tool to import, store, analyze, and graphically display complex phylogenetic sequencing data [@mcmurdie2013]. After completing all these steps, I melted and saved the phyloseq. For generating plots, I used ggplot. 
+
 
 # Results
 
-## Subsections are ok in the results section too
+As a result of our analysis, we found out that the major bacterial phyla in fecal samples are Actinobacteria, Bacteroidetes, Firmicutes, Fusobacteria and Proteobactera regardless of the diet and additives (Figure 1, Figure 2, Figure 3). Beef diet fecal samples have the highest abundances of each bacterial phyla compared to chicken and kibble diet samples except for Firmicutes, which is the highest in chicken diet fecal samples (Figure 1). The abundances of each bacterial phyla in chicken fecal diet samples are always between the abundances of beef and kibble diet fecal samples, except for Firmucutes (Figure 1). Kibble diet fecal samples have the lowest abundances of each bacterial phyla compared to beef and chicken diet fecal samples with no exception (Figure 1).
+Inulin added chicken diet fecal samples have increased abundances of Actinobacteria and Firmicutes and decreased abundance of Fusobacteria compared to control chicken diet fecal samples (Figure 2). Yeast cell wall added chicken diet fecal samples have increased abundances of Proteobacteria and Firmicutes and decreased abundances of Actinobacteria and Fusobacteria compared to control chicken diet fecal samples (Figure 2). Inulin added beef diet fecal samples have increased abundances of Bacteriodetes, Firmicutes and Fusobacteria and decreased abundances of Actinobacteria and Proteobacteria compared to control beef fecal samples (Figure 3). Yeast cell wall added beef diet fecal samples have increased abundances of Actinobacteria, Bacteroidetes, Fusobacteria and Proteobacteria compared to control beef fecal samples (Figure 3). In genus level, we found out that *Fusobacterium* is the most abundant genus in all raw meat diet fecal samples (Figure 4, Figure 5 Figure 6). In kibble diet fecal samples, the most abundant bacterial genera are *Allobaculum*, *Fusobacterium* and *Lactobacillus* (Figure 4). An interesting finding is that all the Fusobacteria phylum abundance among all fecal samples is composed of only *Fusobacterium* genus as their abundances are equal in pylum and genus level among all kibble and raw diet fecal samples (Figure 1, Figure 2, Figure 3, Figure 4, Figure 5, Figure 6). The Bacteroidetes abundance among raw diet fecal samples is composed of only *Bacteroides* genus as their abundances are equal in pylum and genus level among all raw diet fecal samples, but the abundance of Bacteroidetes phylum is higher than the abundance of *Bacteroides* abundance among kibble fecal diet samples so there must be another genus that belongs to Bacteroidetes phylum among them (Figure 1, Figure 2, Figure 3, Figure 4 Figure 5, Figure 6). There are high abundances of unidentified genera among all fecal samples which is not expected (Figure 4, Figure 5, Figure 6). Beef diet fecal samples possess unique genera such as *Collinsella*, *Enterococcus*, *Escherichia*, *Parabacteroides*, *Cellulosilyticum* and *Parasutterella* (Figure 4). Chicken diet fecal samples have *Anaerobiospirillum*, *Clostridium_XVII*, *Streptococcus* and *Sutterella* which doesn't appear in other diets (Figure 4), whereas Kibble diet fecal samples possess *Lactobacillus*, *Prevotella* and *Tuticibacter* (Figure 4). Inulin added chicken diet fecal samples decreased abundances of *Fusobacterium* and *Clostridium_XVII* when compared to control chicken diet fecal samples and also inulin allowed propagation of additional genera like *Allobaculum*, *Megamonas*, *Streptococcus*, *Alloprevotella*, *Blautia*, *Clostridium_sensu_stricto*, *Faecalibacterium* and *Holdemanella* which doesn't appear in control chicken fecal samples (Figure 5). Yeast cell wall added diet fecal samples increased the abundance *Fusobacterium* when compared to control chicken diet fecal samples and also yeast cell wall allowed propagation of additional genera like *Allobaculum*, *Megamonas*, *Streptococcus*, *Anaerobiospirillum*, *Clostridium_XVII*, *Roseburia* and *Sutterella* that are specific to this additive diet (Figure 5). Inulin added beef diet fecal samples increased abundance of *Bacteroides*, *Fusobacterium* and *Megamonas* when compared to control beef diet fecal samples (Figure 6). Moreover, inulin allowed propagation of additional genera like *Allobaculum* and *Holdemanella* that is not found in control beef diet fecal samples and prevented propagation of genera like *Clostridium_sensu_stricto*, *Collinsella*, *Enterococcus*, *Escherichia*, *Parasutterella* and *Roseburia* which is found in control beef diet fecal samples (Figure 6). Yeast cell wall added beef diet fecal samples increased abundances of *Bacteroides*, *Clostridium_XI*, *Fusobacterium*, *Collinsella* and *Parasutterella* when compared to control beef diet fecal samples (Figure 6). Moreover, yeast cell wall allowed propagation of additional genera like *Allobaculum*, *Cellulosilyticum* and *Parabacteroides* that is not found in control beef diet fecal samples and prevented propagation of genera *Blautia* which does appear in control beef diet fecal samples (Figure 6).
 
-```{r your-code-here}
-# Add code chunks as needed for your analyses
-# For most analyses, I would recommend splitting the
-# intensive computational part into a seperate R script file
-# and then just load your libraries and the data object here
-# using the `load()` function. Ask me for clarification if this is
-# unclear.
-```
-
-```{r load-packages-and-data}
+```{r load-packages-and-data, echo = FALSE, include = FALSE}
 # load packages as needed
 library("dplyr")
+library("tidyr")
+library("knitr")
+library("ggplot2")
+library("citr")
+library("dada2")
+library("seqinr")
+library("mctoolsr")
+library("phyloseq")
 
-# load data produced from analysis scripts using
-# something like load("output/processed_data.Rdata")
+# This code loads data produced from the analysis scripts
+load("output/phyloseq_obj.Rdata")
+load("output/melted_phyloseq.Rdata")
 ```
 
-In addition to a minimum of 5-8 figures/tables (and associated captions), you should include sufficient text in this section to describe what your findings were. Remember that in the results section you just describe what you found, but you don't interpret it - that happens in the discussion. 2-3 pages.
+```{r barplot-of-bacterial-phyla-abundance-by-diet, echo = FALSE}
+# This code creates a barplot of the bacterial phyla abundance
+# between the fecal samples of beagles obtained at the end of their
+# digestion of either beef, chicken or kibble diet
+melted_phyloseq %>%
+  ggplot(aes(x = Phylum, y = Abundance, fill = food)) +
+  geom_col(position = position_dodge()) +
+  theme(axis.text = element_text(angle = 90, hjust = 1)) +
+ggtitle("Abundance of Bacterial Phyla by Diet")
+```
+
+**Figure 1** Barplot of abundance of bacterial phyla in the dog fecal samples by diet. Colors were used to differ the data obtained by each fecal sample group in respect to the diet. These diets are raw beef, raw chicken and kibble. Data on raw diets contain the information for inulin added raw diets, yeast cell wall added raw diets and non additive raw diets as a whole. 
+
+In figure 1, we can see that Fusobacteria phylum is the most abundant phylum in beef and chicken diet fecal samples with 4100 and 2300 sequence reads, respectively. Firmicutes is the most abundant phylum among the kibble diet fecal samples with 700 sequence reads. Actinobacteria phylum is significantly high in beef diet fecal samples than the rest of the fecal samples with 600 sequence reads. Kibble diet fecal samples has overall the lowest abundances in each bacterial phyla. There is a small abundance of Cyanobacteria in inulin and control chicken diet fecal samples which is close to 1, thus, negligible. There is also  an abundance of unidentified phyla in each of the diet fecal samples varying from 1 to 5 sequence reads.
+
+
+```{r barplot-of-bacterial-phyla-abundance-in-chicken-diet, echo = FALSE}
+# This code creates a barplot of the bacterial phyla abundance
+# between the fecal samples of beagles obtained at the end of their
+# digestion of chicken diet with either inulin, yeast cell wall or no
+# additives. 
+melted_phyloseq %>%
+  filter(food %in% c("chicken")) %>%
+ggplot(aes(x = Phylum, y = Abundance, fill = additive)) +
+  geom_col(position = position_dodge()) +
+  theme(axis.text = element_text(angle = 90, hjust = 1)) +
+ggtitle("Abundance of Bacterial Phyla in
+       Chicken Diet With or Without Additives")
+```
+
+**Figure 2** Barplot of abundance of bacterial phyla in the dog fecal samples by chicken diet with or without additives. Colors were used to differ the data obtained by each fecal sample group in respect to the presence of additives. Additives include inulin and yeast cell wall. YCW in the additives section is the abbreviation of yeast cell wall. This figure is obtained by filtering out the data for the chicken diet fecal samples.
+
+This figure is obtained by filtering out the data for the chicken diet fecal samples. In figure 2, we can see that chicken control diet fecal samples have the highest Fusobacteria abundance with 2400 sequence reads. Bacteriodetes abundance is almost equal in all additive and non additive samples as they are all between 800 and 900 sequence reads. Inulin has increased the abundance of Firmicutes and Actinobacteria phyla in fecal samples compared to control chicken and yeast cell wall, whereas yeast cell wall has increased the abundance Proteobacteriaa in fecal samples compared to control chicken and inulin. There is a small abundance of Cyanobacteria which is close to 1, thus, negligible. There is also an abundance of unidentified phyla in control chicken and yeast cell wall diet fecal samples varying from 1 to 5 sequence reads.
+
+```{r barplot-of-bacterial-phyla-abundance-in-beef-diet, echo = FALSE}
+# This code creates a barplot of the bacterial phyla abundance
+# between the fecal samples of beagles obtained at the end of their
+# digestion of beef diet with either inulin, yeast cell wall or no
+# additives
+melted_phyloseq %>%
+  filter(food %in% c("beef")) %>%
+ggplot(aes(x = Phylum, y = Abundance, fill = additive)) +
+  geom_col(position = position_dodge()) +
+  theme(axis.text = element_text(angle = 90, hjust = 1)) +
+ggtitle("Abundance of Bacterial Phyla in Beef Diet With or Without Additives")
+```
+
+**Figure 3** Barplot of abundance of bacterial phyla in the dog fecal samples by beef diet with or without additives. Colors were used to differ the data obtained by each fecal sample group in respect to the presence of additives. Additives include inulin and yeast cell wall. YCW in the additives section is the abbreviation of yeast cell wall. This figure is obtained by filtering out the data for the beef diet fecal samples.
+
+In figure 3, we can see that Fusobacteria abundance is significantly higher in inulin added diet fecal samples than the rest of the additive samples with 4100 sequence reads. No Cyanobacteria or Chloroplast is present in any of the groups. Inulin has increased the abundance of Fusobacteria in fecal samples compared to control beef and yeast cell wall, whereas yeast cell wall has increased the abundance of Actinobacteria and Proteobacteria compared to control beef and inulin. There is an abundance of unidentified phyla in control beef and inulin diet fecal samples varying from 1 to 5 sequence reads.
+
+```{r barplot-of-bacterial-genera-abundance-by-diet, echo = FALSE}
+# This code creates a barplot of the bacterial genera abundance
+# between the fecal samples of beagles obtained at the end of their
+# digestion of either beef, chicken or kibble diet. Since the number
+# of genera is too high, I filter out those with an abundance that is
+# higher than 250 sequence reads
+melted_phyloseq %>%
+  filter(Abundance > 250) %>%
+  ggplot(aes(x = Genus, y = Abundance, fill = food)) +
+  geom_col(position = position_dodge()) +
+  theme(axis.text = element_text(angle = 90, hjust = 1)) +
+ggtitle("Abundance of Bacterial Genera by Diet")
+```
+
+**Figure 4** Barplot of abundance of bacterial genera in the dog fecal samples by diet. Colors were used to differ the data obtained by each fecal sample group in respect to the diet. These diets are raw beef, raw chicken and kibble. Data on raw diets contain the information for inulin added raw diets, yeast cell wall added raw diets and non additive raw diets as a whole. The genera that has an abundance lower than 250 sequence reads were removed.
+
+In figure 4, we can see that there is a high amount of unidentified genus among all groups. Abundance of *Fusobacterium* genus is significantly high in beef and chicken diet fecal samples, with 4100 and 2300 sequence reads, respectively. *Anaerobiospirillum*, *Clostridium_XVII*, *Streptococcus* and *Sutterella* only appear in chicken diet fecal samples. *Collinsella*, *Enterococcus*, *Escherichia*, *Parabacteroides*, *Cellulosilyticum* and *Parasutterella* only appear in beef diet fecal samples. *Lactobacillus*, *Prevotella* and *Turicibacter* only appear in kibble diet fecal samples. *Alloprevotella* and *Faecalibacterium* appear in chicken and kibble diet fecal samples. *Blautia*, *Clostridium_sensu_stricto*, *Roseburia* and *Megamonas* appear in chicken and beef diet fecal samples. There is a high abundance of unknown bacterial genera in all diet fecal samples varying between 250 and 1100 sequence reads.
+
+```{r barplot-of-bacterial-genera-abundance-in-chicken-diet, echo = FALSE}
+# This code creates a barplot of the bacterial genera abundance
+# between the fecal samples of beagles obtained at the end of their
+# digestion of chicken diet with either inulin, yeast cell wall or no
+# additives. Since the number of genera is too high, I filter out 
+# those with an abundance that is higher than 250 sequence reads
+melted_phyloseq %>%
+  filter(Abundance > 250) %>%
+  filter(food %in% c("chicken")) %>%
+ggplot(aes(x = Genus, y = Abundance, fill = additive)) +
+  geom_col(position = position_dodge()) +
+  theme(axis.text = element_text(angle = 90, hjust = 1)) +
+ggtitle("Abundance of Bacterial Genera in
+       Chicken Diet With or Without Additives")
+```
+
+**Figure 5** Barplot of abundance of bacterial genera in the dog fecal samples by chicken diet with or without additives. Colors were used to differ the data obtained by each fecal sample group in respect to the presence of additives. Additives include inulin and yeast cell wall. YCW in the additives section is the abbreviation of yeast cell wall. The genera that has an abundance lower than 250 sequence reads were removed. This figure is obtained by filtering out the data for the chicken diet fecal samples.
+
+In figure 5, we can see that abundance of *Fusobacterium* is the highest among control diet fecal samples with 2300 sequence reads. *Anaerobiospirillum*, *Clostridium_XVII*, *Roseburia* and *Sutterella* only appear in yeast cell wall added diet fecal samples. *Alloprevotella*, *Blautia*, *Clostridium_sensu_stricto*, *Faecalibacterium* and *Holdemanella* only appear in inulin added diet fecal samples. *Allobaculum*, *Megamonas* and *Streptococcus* appear in inuline and yeast cell wall added diet fecal samples. There is a high abundance of unknown bacterial genera in all additive and non additive chicken diet fecal samples varying between 750 and 1200 sequence reads.
+
+```{r barplot-of-bacterial-genera-abundance-in-beef-diet, echo = FALSE}
+# This code creates a barplot of the bacterial genera abundance
+# between the fecal samples of beagles obtained at the end of their
+# digestion of beef diet with either inulin, yeast cell wall or no
+# additives. Since the number of genera is too high, I filter out 
+# those with an abundance that is higher than 250 sequence reads
+melted_phyloseq %>%
+  filter(Abundance > 250) %>%
+  filter(food %in% c("beef")) %>%
+ggplot(aes(x = Genus, y = Abundance, fill = additive)) +
+  geom_col(position = position_dodge()) +
+  theme(axis.text = element_text(angle = 90, hjust = 1)) +
+ggtitle("Abundance of Bacterial Genera in Beef Diet With or Without Additives")
+```
+
+**Figure 6** Barplot of abundance of bacterial genera in the dog fecal samples by beef diet with or without additives. Colors were used to differ the data obtained by each fecal sample group in respect to the presence of additives. Additives include inulin and yeast cell wall. YCW in the additives section is the abbreviation of yeast cell wall. The genera that has an abundance lower than 250 sequence reads were removed. This figure is obtained by filtering out the data for the beef diet fecal samples.
+
+In figure 6, we can see that abundance of *Fusobacterium* is the highest among inulin added diet fecal samples with 4100 sequence reads. *Cellulosilyticum* and *Parabacteroides* only appear in yeast cell wall added diet fecal samples. *Enterococcus* and *Escherichia* only appear in beef control diet fecal samples. *Holdemanella* only appear in inulin added diet fecal samples. *Allobaculum* appear in inulin and yeast cell wall added diet fecal samples. *Blautia* appear in inulin added and beef control diet fecal samples. *Clostridium_sensu_stricto*, *Collinsella*, *Parasutterella* and *Roseburia* appear in yeast cell added and beef control diet fecal samples. There is a high abundance of unknown bacterial genera in all additive and non additive beef diet fecal samples varying between 400 and 900 sequence reads.
 
 # Discussion
 
-Add around 3-4 pages interpreting your results and considering future directions one might take in analyzing these data.
+Returning back to our central question, we asked "Which one of the diets prepared by Beloshapka et al., that are raw chicken with inulin, raw chicken with yeast cell wall, raw chicken with no additives, raw beef with inulin, raw beef with yeast cell wall, raw beef with no additives or kibble, will lead to highest abundance of pathogenic bacteria in dog guts?", then we hypothesized that beef with inulin would lead to highest abundance of pathogenic bacteria in dog guts. We found out that the major bacterial phyla in fecal samples are Actinobacteria, Bacteroidetes, Firmicutes, Fusobacteria and Proteobactera regardless of the diet and additives. According to similar diet experiments conducted on healthy dogs, the same phyla were observed as the major ones [@deng2015gut; @suchodolski2011companion]. This would show us that there are no unusual pathogenic bacterial phyla in our fecal samples. As we switch from phylum level to genus level, the genera we obtained from the fecal samples are *Allobaculum*, *Alloprevotella*, *Anaerobiospirillum*, *Bacteroides*, *Blautia*, *Cellulosilyticum*, *Clostridium_sensu_stricto*, *Clostridium_XI*, *Collinsella*, *Enterococcus*, *Escherichia/Shigella*, *Fusobacterium*, *Holdemanella*, *Megamonas*, *Parabacteriodes*, *Parasutterella* and *Roseburia*. After analyzing the pathogenicity of each of those genera, we found out that most of them are not yet to be proven to cause diseases. However, we were able to find some pathogenic activity in some of the genera present in our fecal samples. For instance, *Anaerobiospirillum* turns out to be one of the pathogenic bacterial genera that causes bloody diarrhea in puppies [@misawa2002isolation]. Moreover, several members of the *Escherichia* genus are known to cause enteric or extra-intestinal infections and gastrointestinal diseases like enteric colibacillosis in many animals, including dogs [@beutin1999escherichia; @drolet1994attaching]. We also found out that several members of the *Clostridium* causes diarrhea in dogs [@marks2002genotypic] and that *Streptococcus* genus has members which can cause localized infection or septicemia in dogs of all ages [@lamm2010streptococcal]. For *Clostridium* genus our comparison of pathogenic genera, we'll only count *Clostridium_sensu_stricto* abundances as pathogenic since this genus comprise a very heterogeneous assemblage of bacteria that do not form a phylogenetically coherent group and that only the sub-branch *Clostridium_sensu_stricto* can be regarded as the one of the true representatives of the genus *Clostridium* [@gupta2009phylogenomic]. In our analysis of abundance of genera by diets, we observed that beef diet fecal samples contain *Escherichia* with 250 sequence reads and *Clostridium_sensu_stricto* with 650 sequence reads whereas in chicken diet fecal samples, we observed that they contain *Anaerobiospirillum* with 250 sequence reads, *Streptococcus* with 490 sequence reads and *Clostridium_sensu_stricto* with 250 sequence reads. Even though chicken diet fecal samples have more pathogenic genera than beef diet fecal samples, the total abundances of the genera they have are close to each other. When we compare the raw diets with additives, inulin added chicken fecal samples have a higher abundance of pathogenic bacteria than the rest of chicken diets as they have *Clostridium_sensu_stricto* with 250 sequence reads and *Streptococcus* with 490 sequence reads whereas non additive beef diet fecal samples have a higher abundance of pathogenic bacteria than the rest of beef diets as they have *Clostridium_sensu_stricto* with 500 sequence reads and *Escherichia* with 250 sequence reads. Therefore, we can conclude that we obtained evidence which would support both inulin added chicken diet and non additive beef diet lead to highest abundance of pathogenic bacteria in dog guts. With these results, we are failed to support our hypothesis. However, there is still a high uncertainty in our findings as we don't know if the presence of pathogenic bacteria are caused by the raw meat or by the fruits, vegetables or eggs that added to these diets as we don't know how they were prepared and what was their concentration in the diets. There is also a possibility that these pathogenic bacteria were introduced to fecal samples from environment while the fecal samples were collected as we don't know the method and equipment used for collecting the samples. Another important fact is that we were not able to fully target the pathogenic bacterial genera in our samples as there is no enough information available for each phylum of bacteria. Moreover, the diet experiment is only conducted on 6 beagles between 5 and 6 years old. This is a very small population to make a satisfying conclusion on every dog species. Above all, the genera that we identified as pathogenic have members that can be classified as probiotic. According to a similar dog fecal bacteria study, a member of the *Streptococcus* genus, *Streptococcus alactolyticus*, was identified as a lactic acid bacterium are believed to have a major effect on their host's well-being [@rinkinen2004streptococcus; @vaughan2002intestinal]. It is certain that further research studies on the pathogenicity of bacterial genera located in dog gut are required to be able to have more reliable outcomes for studies like ours. Until then, we can focus more on the nutrient aspect of the dog diets, like the study of Carcifioni et al. who analyzed the effects of six different carbohydrate sources on dog diet digestibility from fecal samples and found out that the diets containing brewer’s rice and cassava flour presented the greatest digestibility of dry matter, organic matter and gross energy [@carciofi2008effects]. Another good example is the study of Sunvold et al. in which single sources of dietary fiber in dog food were evaluated by fermenting the fibrous substrates in vitro using dog feces as the source of inoculum and they found out that Organic matter disappearance was lowest for Solka Flocoat fiber and greatest for fructooligosaccharides and lactulose [@sunvold1995dietary]. As further research studies on the pathogenicity of bacterial genera located in dog gut were conducted and we get more information, we can repeat this analysis with a new experiment in which a great number of dog subjects would be used to represent at least 15-20 different species. Moreover, a great number of raw diets formulated with different meats, organs, vegetables and fruits along with dry kibbles and canned dog foods would be compared as well.
 
 # Sources Cited
